@@ -1,5 +1,6 @@
 package com.example;
 
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mybatis.spring.annotation.MapperScan;

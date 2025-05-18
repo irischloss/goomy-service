@@ -77,6 +77,14 @@
 					<version>8.0.33</version>
         </dependency>
 
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional> <!-- 这个标记为 true 不会打进最终 jar 包 -->
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
