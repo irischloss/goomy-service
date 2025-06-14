@@ -1,4 +1,4 @@
-package com.example.water_gun_service.controller;
+package com.example.watergunservice.controller;
 
 import java.util.concurrent.CompletableFuture;
 

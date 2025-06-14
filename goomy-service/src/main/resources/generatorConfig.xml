@@ -10,9 +10,9 @@
                         userId="neko"
                         password="1021844465mrfz" />
         
-        <javaModelGenerator targetPackage="com.example.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.example.friendbookservice.model" targetProject="src/main/java"/>
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.mapper" targetProject="src/main/java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.friendbookservice.mapper" targetProject="src/main/java"/>
 
         <table tableName="friends" domainObjectName="Friends"/>
     </context>
