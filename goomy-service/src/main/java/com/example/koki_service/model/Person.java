@@ -5,18 +5,19 @@ public class Person {
     private String birthday;
 
     // 必须要有无参构造函数（Spring 反序列化用）
-    public Person() {}
-
-    public Person(String name,String birthday){
-        this.name=name;
-        this.birthday=birthday;
+    public Person() {
     }
 
-    public void setName(String name){
-        this.name=name;
+    public Person(String name, String birthday) {
+        this.name = name;
+        this.birthday = birthday;
     }
 
-    public String getName(){
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
         return this.name;
     }
 
