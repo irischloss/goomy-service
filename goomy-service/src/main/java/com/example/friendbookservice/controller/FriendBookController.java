@@ -1,4 +1,4 @@
-package com.example.friend_book_service.controller;
+package com.example.friendbookservice.controller;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.friend_book_service.service.FriendService;
+import com.example.friendbookservice.service.FriendBookService;
 
 @RestController
 @RequestMapping("/editdb")
 public class FriendBookController {
     @Autowired
-    private FriendService friend_service;
+    private FriendBookService friend_service;
 
     @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/getbirthdaybylastname")
-    public String getBirthdayBySecondName(
+    public String getFriendByLastName(
             @RequestParam(value = "last_name", defaultValue = "pig") String last_name) {
         System.out.println(last_name);
-        return friend_service.getFriendBySecondName(last_name).toString();
+        return friend_service.getFriendByLastName(last_name).toString();
     }
 
     @GetMapping("/addfriend")
@@ -39,11 +39,5 @@ public class FriendBookController {
         } else {
             return "Failed";
         }
-    }
-
-    @GetMapping("/getelements")
-    public String getelements(@RequestParam(value = "message", defaultValue = "Hello, World!") String message) {
-        System.out.println(message);
-        return "Echo: " + message;
     }
 }

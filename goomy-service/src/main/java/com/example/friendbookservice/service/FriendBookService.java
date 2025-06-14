@@ -1,8 +1,4 @@
-package com.example.friend_book_service.service;
-
-import com.example.mapper.FriendsMapper;
-import com.example.model.Friends;
-import com.example.model.FriendsExample;
+package com.example.friendbookservice.service;
 
 import java.util.Date;
 import java.text.ParseException;
@@ -12,8 +8,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.friendbookservice.mapper.FriendsMapper;
+import com.example.friendbookservice.model.Friends;
+import com.example.friendbookservice.model.FriendsExample;
+
 @Service
-public class FriendService {
+public class FriendBookService {
 
     @Autowired
     private FriendsMapper friendsMapper;
