@@ -8,9 +8,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.friendbookservice.mapper.FriendsMapper;
-import com.example.friendbookservice.model.Friends;
-import com.example.friendbookservice.model.FriendsExample;
+import com.example.friendbookservice.dao.FriendsMapper;
+import com.example.friendbookservice.dto.Friends;
+import com.example.friendbookservice.dto.FriendsExample;
 
 @Service
 public class FriendBookService {
@@ -26,16 +26,15 @@ public class FriendBookService {
         return friendsMapper.selectByPrimaryKey(id);
     }
 
-    public List<Friends> getFriendByLastName(String second_name) {
+    public List<Friends> getFriendByUsername(String username) {
         FriendsExample example = new FriendsExample();
-        example.createCriteria().andLastNameEqualTo(second_name);
+        example.createCriteria().andUsernameEqualTo(username);
         return friendsMapper.selectByExample(example);
     }
 
-    public int addFriend(String first_name, String last_name, String birthday) {
+    public int addFriend(String username, String birthday) {
         Friends friend = new Friends();
-        friend.setFirstName(first_name);
-        friend.setLastName(last_name);
+        friend.setUsername(username);
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date date = dateFormat.parse(birthday);
