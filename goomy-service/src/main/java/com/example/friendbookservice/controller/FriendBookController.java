@@ -21,20 +21,19 @@ public class FriendBookController {
     private FriendBookService friend_service;
 
     @CrossOrigin(origins = "http://localhost:8080")
-    @GetMapping("/getbirthdaybylastname")
-    public String getFriendByLastName(
-            @RequestParam(value = "last_name", defaultValue = "pig") String last_name) {
-        System.out.println(last_name);
-        return friend_service.getFriendByLastName(last_name).toString();
+    @GetMapping("/getbirthdaybyusername")
+    public String getFriendByUsername(
+            @RequestParam(value = "username", defaultValue = "pig") String username) {
+        System.out.println(username);
+        return friend_service.getFriendByUsername(username).toString();
     }
 
     @GetMapping("/addfriend")
     public String addFriend(
-            @RequestParam(value = "first_name", defaultValue = "pig") String first_name,
-            @RequestParam(value = "last_name", defaultValue = "pig") String last_name,
+            @RequestParam(value = "user_name", defaultValue = "pig") String user_name,
             @RequestParam(value = "birthday", defaultValue = "1949-01-01") String birthday) {
-        System.out.println(last_name);
-        if (friend_service.addFriend(first_name, last_name, birthday) > 0) {
+        System.out.println(user_name);
+        if (friend_service.addFriend(user_name, birthday) > 0) {
             return "Success";
         } else {
             return "Failed";

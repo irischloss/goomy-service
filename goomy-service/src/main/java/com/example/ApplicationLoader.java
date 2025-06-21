@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.friendbookservice.mapper")
+@MapperScan("com.example.friendbookservice.dao")
 public class ApplicationLoader {
     private static final Logger log = LogManager.getLogger(ApplicationLoader.class);
 
